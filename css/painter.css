@@ -1,0 +1,254 @@
+
+body, html {
+  width: 100%;
+  height: 100%
+}
+
+body {
+  font-family: 'Source Sans Pro'
+}/*定义全局字体*/
+
+.btn-xl {
+  padding: 1.25rem 2.5rem
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700
+}
+
+@media (max-width: 992px) {
+  .map {
+    height: 75%
+  }
+}
+
+.masthead {
+  min-height: 30rem;
+  position: relative;
+  display: table;
+  width: 100%;
+  height: 100%;
+  padding-top: 8rem;
+  padding-bottom: 8rem;
+  background: -webkit-gradient(linear, left top, right top, from(rgba(255, 255, 255, .1)), to(rgba(255, 255, 255, .1))), url(../img/bg-masthead.jpg);
+  background: linear-gradient(90deg, rgba(255, 255, 255, .1) 0, rgba(255, 255, 255, .1) 100%), url(../img/bg-masthead.jpg);
+  background-position: left top;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.masthead h1 {
+  font-size: 4rem;
+  margin: 0;
+  padding: 0
+}
+
+@media (min-width: 992px) {
+  .masthead {
+    height: 100vh;
+    background-position: center center;
+  }
+
+  .masthead h1 {
+    font-size: 5.5rem
+  }
+}
+
+#sidebar-wrapper {
+  position: fixed;
+  z-index: 2;
+  right: 0;
+  width: 250px;
+  height: 100%;
+  -webkit-transition: all .4s ease 0s;
+  transition: all .4s ease 0s;
+  -webkit-transform: translateX(250px);
+  transform: translateX(250px);
+  background: #1d809f;
+  border-left: 1px solid rgba(255, 255, 255, .1)
+}
+
+.sidebar-nav {
+  position: absolute;
+  top: 0;
+  width: 250px;
+  margin: 0;
+  padding: 0;
+  list-style: none
+}
+
+.sidebar-nav li.sidebar-nav-item a {
+  display: block;
+  text-decoration: none;
+  color: #040303;
+  padding: 15px
+}
+
+.sidebar-nav li a:hover {
+  text-decoration: none;
+  color: #fff;
+  background: rgba(255, 255, 255, .2)
+}
+
+.sidebar-nav li a:active, .sidebar-nav li a:focus {
+  text-decoration: none
+}
+
+.sidebar-nav > .sidebar-brand {
+  font-size: 1.2rem;
+  background: rgba(52, 58, 64, .1);
+  height: 80px;
+  line-height: 50px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-left: 15px
+}
+
+.sidebar-nav > .sidebar-brand a {
+  color: #fff
+}
+
+.sidebar-nav > .sidebar-brand a:hover {
+  color: #fff;
+  background: 0 0
+}
+
+#sidebar-wrapper.active {
+  right: 250px;
+  width: 250px;
+  -webkit-transition: all .4s ease 0s;
+  transition: all .4s ease 0s
+}
+
+.menu-toggle {
+  position: fixed;
+  right: 15px;
+  top: 15px;
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  color: #fff;
+  background: rgba(52, 58, 64, .5);
+  line-height: 50px;
+  z-index: 9;
+}
+
+.menu-toggle:focus, .menu-toggle:hover {
+  color: #fff
+}
+
+.menu-toggle:hover {
+  background: #343a40
+}
+.cover{
+  position:fixed;
+  width:100%;  /*宽度设置为100%，这样才能使隐藏背景层覆盖原页面*/
+  height:100%;
+  filter:alpha(opacity=60);  /*设置透明度为60%*/
+  opacity:0.6;  /*非IE浏览器下设置透明度为60%*/
+  background:rgba(0, 0, 0, 0.4);
+  display:none;
+  z-Index:99;
+}
+.window{
+  position: absolute;
+  width: 400px;
+  height: 380px;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  border-radius:12px;
+  box-shadow: 0 12px 24px 0 rgba(28,31,33,.1);
+  margin: auto;
+  background-color: white;
+  display: none;
+  z-index: 999;
+}
+.head{position: relative;
+  padding: 0 20px 25px;}
+.head h1{font-size: 16px;
+  line-height: 49px;
+  font-weight: 700;
+  height: 49px;
+  color: #787d82;}
+.head span{float: left;
+  width: 80px;
+  text-align: center;
+  height: 49px;
+  line-height: 49px;
+  cursor: pointer;}
+#button{position: absolute;
+  top: 17px;
+  right: 20px;
+  width: 17px;
+  height: 17px;
+  cursor: pointer;
+  background: url("../img/nlogin.png") no-repeat 0 0;}
+.w_content{margin: 0 50px;height: 200px}
+.w_input{width: 100%;
+  height: 48px;
+  line-height: 20px;
+  box-sizing: border-box;
+  padding: 14px;
+  box-shadow: 2px 0 5px 0 #fff;
+  background: rgba(28,31,33,.06);
+  border-radius: 8px;
+  border: 0;}
+input::-webkit-input-placeholder {
+  color: #787d82;
+  font-size: 15px;
+}
+.w_content a{
+  color: #9199a1;
+  font-size: 5px;
+  border: none;
+}
+.dot{margin: 0 16px;
+  background: rgba(28, 31, 33, 0.48);
+  width: 1px;
+  height: 10px;
+  display: inline-block;
+}
+.foot{width: 100%;clear: both;margin-top: 10px}
+.foot input{
+  color: white;
+  background-color: red;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 11px 32px;
+  font-size: 16px;
+  line-height: 24px;
+  border-radius: 24px;
+  display: inline-block;
+  margin-bottom: 0;
+  text-align: center;
+  vertical-align: middle;
+  outline: none;
+  border: 0;
+}
+.head span:hover:after {
+  content: " ";
+  width: 16px;
+  height: 4px;
+  line-height: 4px;
+  background: #f20d0d;
+  border-radius: 2px;
+  display: block;
+  margin: 0 auto
+}
+.head span:hover{color: #f20d0d}
+.span_active{color: #f20d0d}
+.span_active:after{
+  content: " ";
+  width: 16px;
+  height: 4px;
+  line-height: 4px;
+  background: #f20d0d;
+  border-radius: 2px;
+  display: block;
+  margin: 0 auto}
+.w_checkbox{display: flex;align-items: center;justify-content: space-between;}
+.a_read{cursor: pointer}
+.none{display: none}
+#w_a{color: #37f!important}

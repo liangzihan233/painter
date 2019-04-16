@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="en" id="Content">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Painter</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <!-- 本地css -->
+    <link href="css/main.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/photo.css">
+    <title>Painter</title>
+    <link rel="stylesheet" href="vendor/colorChoose/colpick.css">
+    <link rel="stylesheet" href="img/rule/ruler.css">
+</head>
+<body>
+<div class="cover none"></div>
+<!--<img src="img/jojo/00.gif" id="img">-->
+               <!--头部菜单-->
+               <nav class="navbar navbar-expand-md navbar-dark bg-dark" id="mainNav">
+    <div class="container" style="margin-left: 20px">
+        <!--头像和logo-->
+        <div class="mainNav-h1"><a class="navbar-brand" href="index.html">Painter</a></div>
+                 <!--菜单按钮-->
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+                  <!--下拉菜单-->
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav " id="tools_">
+                <li id="li_1">
+                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        文件
+                    </a>
+                    <div class="dropdown clearfix">
+                    <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu">
+                        <li class="main-item">
+                            <a class="dropdown-item" id="new">新建</a>
+                        </li>
+                        <li class="main-item" id="li_2">
+                            <a class="dropdown-item">打开<span class="quickevent">Ctrl + G</span></a>
+                        </li>
+                        <li class="main-item" id="li_save">
+                            <a class="dropdown-item">保存<span class="quickevent"></span></a>
+                        </li>
+                        <li class="main-item" id="exit">
+                            <a class="dropdown-item">退出</a>
+                        </li>
+                    </ul>
+                        </div>
+                </li><!--文件-->
+                <li>
+                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        编辑
+                    </a>
+                    <div class="dropdown clearfix">
+                        <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu">
+                            <li class="dropdown-submenu">
+                                <a tabindex="-1">jojo的奇妙ps</a>
+                                <ul class="dropdown-menu">
+                                    <li><a tabindex="-1" id="jojo_0" class="jojo">&nbsp;</a>
+                                    </li>
+                                    <li><a tabindex="-1" id="jojo_1" class="jojo">&nbsp;</a>
+                                    </li>
+                                    <li><a tabindex="-1" id="jojo_2" class="jojo">&nbsp;</a>
+                                    </li>
+                                    <li><a tabindex="-1" id="jojo_3" class="jojo">&nbsp;</a>
+                                    </li>
+                                    <li><a tabindex="-1" id="jojo_4" class="jojo">&nbsp;</a>
+                                    </li>
+                                    <li><a tabindex="-1" id="jojo_5" class="jojo">&nbsp;</a>
+                                    </li>
+                                    <li><a tabindex="-1" id="jojo_6" class="jojo">&nbsp;</a>
+                                    </li>
+                                    <li><a tabindex="-1" id="jojo_7" class="jojo">&nbsp;</a>
+                                    </li>
+                                    <li><a tabindex="-1" id="jojo_8" class="jojo">&nbsp;</a>
+                                    </li>
+                                    <li><a tabindex="-1" id="jojo_9" class="jojo">&nbsp;</a>
+                                    </li>
+                                    <li><a tabindex="-1" id="jojo_11" class="jojo">&nbsp;</a>
+                                    </li>
+                                    <li><a tabindex="-1" id="jojo_12" class="jojo">&nbsp;</a>
+                                    </li>
+                                    <li><a tabindex="-1" id="jojo_13" class="jojo">&nbsp;</a>
+                                    </li>
+                                    <li><a tabindex="-1" id="jojo_14" class="jojo">&nbsp;</a>
+                                    </li>
+                                    <li><a tabindex="-1" id="jojo_bg" class="jojo">&nbsp;</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="dropdown-submenu">
+                                <a tabindex="-1">表情包</a>
+                                <ul class="dropdown-menu">
+                                    <li><a tabindex="-1" id="stick_0" class="jojo">&nbsp;</a>
+                                    </li>
+                                    <li><a tabindex="-1" id="stick_1" class="jojo">&nbsp;</a>
+                                    </li>
+                                    <li><a tabindex="-1" id="stick_2" class="jojo">&nbsp;</a>
+                                    </li>
+                                    <li><a tabindex="-1" id="stick_3" class="jojo">&nbsp;</a>
+                                    </li>
+                                    <li><a tabindex="-1" id="stick_4" class="jojo">&nbsp;</a>
+                                    </li>
+                                    <li><a tabindex="-1" id="stick_5" class="jojo">&nbsp;</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="dropdown-submenu">
+                                <a class="dropdown-item">自定义印章</a>
+                                <ul class="dropdown-menu"  id="my_zhang">
+                                </ul>
+                            </li>
+                            <li class="main-item" id="clear_all">
+                                <a class="dropdown-item">清空画布<span class="quickevent"></span></a>
+                            </li>
+                            <li class="main-item" id="clear_zhang">
+                                <a class="dropdown-item">清空印章<span class="quickevent"></span></a>
+                            </li>
+                        </ul>
+                    </div>
+                </li><!--编辑-->
+                <li>
+                <a class="nav-link dropdown-toggle"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                   图像
+                </a>
+                    <div class="dropdown clearfix">
+                <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu">
+                    <li class="main-item" id="pix_control">
+                        <a tabindex="-1">调整</a>
+                    </li>
+                    <li class="main-item" id="img_size">
+                        <a class="dropdown-item">图像大小</a>
+                    </li>
+                    <li class="main-item" id="copy_canvas">
+                        <a class="dropdown-item">复制图像</a>
+                    </li>
+                    <li class="main-item" id="canvas_size">
+                        <a class="dropdown-item">画布大小</a>
+                    </li>
+                    <li class="divider"></li>
+                    <li class="dropdown-submenu">
+                        <a class=tabindex="-1">旋转画布</a>
+                        <ul class="dropdown-menu">
+                            <li><a tabindex="-1" id="rotate_90">顺时针90</a>
+                            </li>
+                            <li><a tabindex="-1" id="rotate_270">逆时针90</a>
+                            </li>
+                            <li id="rotateAny"><a tabindex="-1">旋转任意角度</a>
+                            </li>
+                            <li><a tabindex="-1" id="rotate_180">水平翻转</a>
+                            </li>
+                            <li><a tabindex="-1" id="rotate_c">垂直翻转</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+                    </div>
+            </li> <!--图像-->
+                <li>
+                    <a class="nav-link dropdown-toggle"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        滤镜
+                    </a>
+                    <div class="dropdown clearfix">
+                    <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownPortfolio" id="xiaoguo">
+                        <li class="main-item">
+                            <a class="dropdown-item" id="mnConslateblackwhite">黑白</a>
+                        </li>
+                        <li class="main-item">
+                            <a class="dropdown-item" id="mnConslateopsitecolor">反色</a>
+                        </li>
+                        <li class="main-item">
+                            <a class="dropdown-item" id="mnConslateblur">模糊</a>
+                        </li>
+                        <li class="main-item">
+                            <a class="dropdown-item" id="mnConslatecloud">雾化</a>
+                        </li>
+                        <li class="main-item">
+                            <a class="dropdown-item" id="mnConslatesharpen">锐化</a>
+                        </li>
+                        <li class="main-item">
+                            <a class="dropdown-item" id="mnConslatefloat">浮雕</a>
+                        </li>
+                        <li class="main-item">
+                            <a class="dropdown-item" id="mnConslatesoft">柔化</a>
+                        </li>
+                        <li class="main-item">
+                            <a class="dropdown-item" id="mnConslatepainting">油画</a>
+                        </li>
+                        <li class="main-item">
+                            <a class="dropdown-item" id="mnConslatewood">积木</a>
+                        </li>
+                        <li class="main-item">
+                            <a class="dropdown-item" id="mnConslateCuve">雕刻</a>
+                        </li>
+                        <li class="main-item">
+                            <a class="dropdown-item" id="mnConslateTurnOld">怀旧</a>
+                        </li>
+                        <!--<li class="main-item">
+                            <a class="dropdown-item">蒙版</a>
+                            <div class="menu-item icons-rightarrow icons-style"></div>
+                        </li>-->
+                        <li class="dropdown-submenu">
+                            <a tabindex="-1">蒙版</a>
+                            <ul class="dropdown-menu">
+                                <li><a tabindex="-1" id="mnConslateTurnRed">红色蒙版</a>
+                                </li>
+                                <li><a tabindex="-1" id="mnConslateTurnGreen">绿色蒙版</a>
+                                </li>
+                                <li><a tabindex="-1" id="mnConslateTurnBlue">蓝色蒙版</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    </div>
+                </li><!--效果-->
+                <li>
+                    <a class="nav-link dropdown-toggle"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        视图
+                    </a>
+                    <div class="dropdown clearfix">
+                    <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownPortfolio">
+                        <li class="main-item" id="big">
+                            <a class="dropdown-item">放大</a>
+                        </li>
+                        <li class="main-item" id="small">
+                            <a class="dropdown-item">缩小</a>
+                        </li>
+                        <li class="main-item" id="ruler">
+                            <a class="dropdown-item">标尺</a>
+                        </li>
+                        <li class="divider"></li>
+                        <li class="main-item" id="all_scream">
+                            <a class="dropdown-item">图片全屏</a>
+                        </li>
+                        <li class="main-item" id="reset_scream">
+                            <a class="dropdown-item">重置</a>
+                        </li>
+                    </ul>
+                    </div>
+                </li><!--视图-->
+                <li>
+                    <a class="nav-link dropdown-toggle"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        帮助
+                    </a>
+                    <div class="dropdown clearfix">
+                    <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownPortfolio">
+                        <li class="main-item">
+                            <a class="dropdown-item">帮助文档</a>
+                        </li>
+                        <li class="main-item">
+                            <a class="dropdown-item" href="https://github.com/liangzihan233" target="_blank">网站</a>
+                        </li>
+                        <li class="divider"></li>
+                        <li class="main-item">
+                            <a class="dropdown-item">反馈或报告</a>
+                        </li>
+                        <li class="main-item">
+                            <a class="dropdown-item">关于</a>
+                        </li>
+                    </ul>
+                    </div>
+                </li><!--帮助-->
+                <!--<li>
+                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        文件
+                    </a>
+                    <div class="dropdown clearfix">
+                    <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu">
+                        <li><a tabindex="-1" href="#">Action</a></li>
+                        <li><a tabindex="-1" href="#">Another action</a></li>
+                        <li><a tabindex="-1" href="#">Something else here</a></li>
+                        <li class="divider"></li>
+                        <li class="dropdown-submenu">
+                            <a tabindex="-1" href="#">More options</a>
+                            <ul class="dropdown-menu">
+                                <li><a tabindex="-1" href="#">Second level link</a></li>
+                                <li><a tabindex="-1" href="#">Second level link</a></li>
+                                <li><a tabindex="-1" href="#">Second level link</a></li>
+                                <li><a tabindex="-1" href="#">Second level link</a></li>
+                                <li><a tabindex="-1" href="#">Second level link</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                </li>-->
+            </ul>
+        </div>
+    </div>
+</nav>
+               <!--工具属性条-->
+               <div id="mainDiv" >
+        <ul class="mainDiv_ul">
+            <li>
+                <p style="margin: 0 10px">拾色器:</p>
+            </li>
+            <li>
+                <div class="color-box"></div>
+            </li>
+            <li class="draw_pen none">
+                <div class="dropdown">
+                    <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                      线条样式
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenu1" id="draw_tools">
+                        <li id="rect"><a href="javascript:void(0)">长方形&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+                        <li id="arrow"><a href="javascript:void(0)">箭头&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+                        <li id="circle"><a href="javascript:void(0)">圆形&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li class="draw_pen none">
+                <p style="margin-left: 20px;display: inline">线宽(1-30)px:</p>
+                <input id="pen_input" style="display: inline-block;
+    font-weight: 400;border-radius: 0.25rem;width: 40px;height: 20px;" placeholder="0">
+                <button id="draws" class="btn btn-default" type="button">
+                    确定
+                </button>
+                <button id="draws_save" class="btn btn-default" type="button">
+                    保存绘制
+                </button>
+            </li>
+            <li class="draw_bi none">
+                <p style="margin-left: 20px;display: inline">画笔大小(1-5):</p>
+                <input id="bi_input" style="display: inline-block;
+    font-weight: 400;border-radius: 0.25rem;width: 40px;height: 20px;" placeholder="1">
+                <button id="bi_button" class="btn btn-default" type="button">
+                    确定
+                </button>
+                <button id="draw_save" class="btn btn-default" type="button">
+                    保存绘制
+                </button>
+            </li>
+            <li class="draw_erazer none">
+                <p style="margin-left: 20px;display: inline">橡皮大小:</p>
+                <input id="erazer_input" style="display: inline-block;
+    font-weight: 400;border-radius: 0.25rem;width: 40px;height: 20px;" placeholder="5">
+                <button id="erazer_button" class="btn btn-default" type="button">
+                    确定
+                </button>
+            </li>
+            <li class="draw_zhang none">
+                <button id="zhang_no" class="btn btn-default" type="button">
+                    取消绘制
+                </button>
+                <button id="zhang_yes" class="btn btn-default" type="button">
+                    保存绘制
+                </button>
+            </li>
+            <li class="draw_border none">
+                <p style="margin-left: 20px;display: inline">边框宽度(px)</p>
+                <input id="border_px" style="display: inline-block;font-weight: 400;border-radius: 0.25rem;width: 40px;height: 20px;" placeholder="1">
+                <p style="margin-left: 20px;display: inline">颜色(#)</p>
+                <input id="border_color" style="display: inline-block;font-weight: 400;border-radius: 0.25rem;width: 40px;height: 20px;" placeholder="1">
+                <p style="margin-left: 20px;display: inline">阴影(px)</p>
+                <input id="border_shadow" style="display: inline-block;font-weight: 400;border-radius: 0.25rem;width: 40px;height: 20px;" placeholder="1">
+                <p style="margin-left: 20px;display: inline">圆角(px)</p>
+                <input id="border_radius" style="display: inline-block;font-weight: 400;border-radius: 0.25rem;width: 40px;height: 20px;" placeholder="1">
+                <button id="border_yes" class="btn btn-default" type="button">
+                    确定
+                </button>
+            </li>
+            <li class="scale_li none">
+                <p style="margin-left: 20px;display: inline">缩放倍数(%)</p>
+                <input id="scale" style="display: inline-block;font-weight: 400;border-radius: 0.25rem;width: 40px;height: 20px;" placeholder="1">
+                <button id="scale_big" class="btn btn-default" type="button">
+                    放大
+                </button>
+                <button id="scale_small" class="btn btn-default" type="button">
+                    缩小
+                </button>
+            </li>
+        </ul>
+    </div>
+<div class="content">
+               <!--左侧工具栏-->
+               <div id="tools">
+                   <ul>
+                       <li id="tools_1"><a tabindex="0" class="btn btn-lg " role="button" data-toggle="popover" data-trigger="hover" title="移动工具" data-content="可将最上层图层移动，点击可切换最上方图层"></a></li>
+                       <li id="tools_2"><a tabindex="0" class="btn btn-lg" role="button" data-toggle="popover" data-trigger="hover" title="选中工具" data-content="拖动选框，修改区域内像素"></a></li>
+                       <li id="tools_3"><a tabindex="0" class="btn btn-lg" role="button" data-toggle="popover" data-trigger="hover" title="不规则选中工具" data-content="没做的功能点了也没有用"></a></li>
+                       <li id="tools_4"><a tabindex="0" class="btn btn-lg" role="button" data-toggle="popover" data-trigger="hover" title="截屏工具" data-content="点击之后可以拖动选区生成想要的截图"></a></li>
+                       <li id="tools_5"><a tabindex="0" class="btn btn-lg" role="button" data-toggle="popover" data-trigger="hover" title="裁剪工具" data-content="可以调整选框大小，点击确认可生成裁剪完的新图层"></a></li>
+                       <li id="tools_6"><a tabindex="0" class="btn btn-lg" role="button" data-toggle="popover" data-trigger="hover" title="吸管工具" data-content="哪里不会点哪里！妈妈再也不担心我认不出颜色啦"></a></li>
+                       <li id="tools_7"><a tabindex="0" class="btn btn-lg" role="button" data-toggle="popover" data-trigger="hover" title="背景橡皮工具" data-content="求你们慢点擦，电脑带不动"></a></li>
+                       <li id="tools_8"><a tabindex="0" class="btn btn-lg" role="button" data-toggle="popover" data-trigger="hover" title="画笔工具" data-content="选好颜色然后，开始用力刷！"></a></li>
+                       <li id="tools_9"><a tabindex="0" class="btn btn-lg" role="button" data-toggle="popover" data-trigger="hover" title="印章工具" data-content="加上自己的diy印章"></a></li>
+                       <li id="tools_10"><a tabindex="0" class="btn btn-lg" role="button" data-toggle="popover" data-trigger="hover" title="多功能画笔" data-content="选择好画笔样式后确定开始绘画"></a></li>
+                       <li id="tools_11"><a tabindex="0" class="btn btn-lg" role="button" data-toggle="popover" data-trigger="hover" title="图表工具" data-content="选择数据，生成图表"></a></li>
+                       <li id="tools_12"><a tabindex="0" class="btn btn-lg" role="button" data-toggle="popover" data-trigger="hover" title="复制图层工具" data-content="备份当前屏幕上画布的样子"></a></li>
+                       <li id="tools_13"><a tabindex="0" class="btn btn-lg" role="button" data-toggle="popover" data-trigger="hover" title="模糊工具" data-content="配合选区工具使用，当马赛克用吧"></a></li>
+                       <li id="tools_14"><a tabindex="0" class="btn btn-lg" role="button" data-toggle="popover" data-trigger="hover" title="淡色工具" data-content="配合选区工具，局部淡色"></a></li>
+                       <li id="tools_15"><a tabindex="0" class="btn btn-lg" role="button" data-toggle="popover" data-trigger="hover" title="加深工具" data-content="配合选区工具使用，局部加深"></a></li>
+                       <li id="tools_16"><a tabindex="0" class="btn btn-lg" role="button" data-toggle="popover" data-trigger="hover" title="打字工具" data-content="估计不会上线的功能"></a></li>
+                       <li id="tools_17"><a tabindex="0" class="btn btn-lg" role="button" data-toggle="popover" data-trigger="hover" title="没想好工具" data-content="想不到有什么工具了，属于凑数"></a></li>
+                       <li id="tools_18"><a tabindex="0" class="btn btn-lg" role="button" data-toggle="popover" data-trigger="hover" title="边款工具" data-content="设计自己的画框"></a></li>
+                       <li id="tools_19"><a tabindex="0" class="btn btn-lg" role="button" data-toggle="popover" data-trigger="hover" title="举手工具" data-content="报告，我有bug要提交"></a></li>
+                       <li id="tools_20"><a tabindex="0" class="btn btn-lg" role="button" data-toggle="popover" data-trigger="hover" title="放大镜工具" data-content="跟菜单里的功能一样"></a></li>
+                   </ul>
+               </div>
+
+               <!--右侧工具栏-->
+               <div class="tools_right">
+               <ul id="navigation">
+                   <li class="out-div histories" style="background-color: #FF0000">
+                       <div class="arrow" style="border-right-color: #FF0000"></div>
+                       <a>历史记录</a>
+                   </li>
+                   <li class="out-div tool_left" style="background-color: #FF7D00">
+                       <div class="arrow" style="border-right-color: #FF7D00"></div>
+                       <a>工具栏</a>
+                   </li>
+                   <li class="out-div foot_xy" style="background-color: #FFFF00">
+                       <div class="arrow" style="border-right-color: #FFFF00"></div>
+                       <a>底部坐标</a>
+                   </li>
+                   <li class="out-div refresh" style="background-color: #00FF00">
+                       <div class="arrow" style="border-right-color: #00FF00"></div>
+                       <a>刷新</a>
+                   </li>
+                   <li class="out-div save_zhang" style="background-color: #00FFFF">
+                       <div class="arrow" style="border-right-color: #00FFFF"></div>
+                       <a>生成印章</a>
+                   </li>
+                   <li class="out-div ruler" style="background-color: #0000FF">
+                       <div class="arrow" style="border-right-color: #0000FF"></div>
+                       <a>退出全屏</a>
+                   </li>
+                   <li class="out-div to_all" style="background-color: #FF00FF">
+                       <div class="arrow" style="border-right-color: #FF00FF"></div>
+                       <a>全屏</a>
+                   </li>
+               </ul>
+               </div>
+               <!--脚步坐标插件-->
+               <div id="foot">
+                   <span style="margin-left: 10px">X：</span>
+                   <span id="foot_x"></span>
+                   <span style="margin-left: 10px">Y：</span>
+                   <span id="foot_y" style="margin-left: 10px"></span>
+                   <span id="foot_alert" style="margin-left: 10px"></span>
+               </div>
+
+               <!--历史记录悬浮窗-->
+               <div id="history" class="none">
+          <div class="history_head">
+         <h1><span>历史记录</span></h1>
+         <button>
+             <ul>
+                 <li></li>
+             </ul>
+         </button>
+     </div>
+     <div class="history_content">
+         <ul style="margin: 0" id="history_tar">
+         </ul>
+     </div>
+     <div class="history_foot"></div>
+ </div>
+
+             <div id="canvas_main"><!--主canvas-->
+             </div>
+    <!--新建窗口-->
+<!--新建-->
+               <div class="windows_new none">
+<div class="head_new">
+    <a>宽px:</a><input type="text" placeholder="小于1080px" class="input_up small_1080">
+</div>
+    <div class="head_content">
+        <a>高px:</a><input type="text" placeholder="小于560px" class="input_up small_500">
+    </div>
+    <div class="head_foot">
+        <input class="input_no no_yes" type="button" value="否">
+        <input class="input_yes no_yes" type="button" value="是">
+    </div>
+</div>
+<!--旋转-->
+               <div class="windows_rotate none">
+                        <div class="head_new">
+                            <a>输入旋转角度:</a>
+                        </div>
+                        <div class="head_content">
+                            <input type="text" placeholder="<360" class="input_up rotate_val">
+                        </div>
+                        <div class="head_foot">
+                            <input class="rotate_no no_yes" type="button" value="否">
+                            <input class="rotate_yes no_yes" type="button" value="是">
+                        </div>
+                </div>
+<!--图像画布大小-->
+                <div class="windows_size none">
+        <div class="head_new">
+            <a>宽:</a><input type="text" placeholder="小于1080px" class="input_up width_val">
+        </div>
+        <div class="head_content">
+            <a>高:</a><input type="text" placeholder="小于560px" class="input_up height_val">
+        </div>
+        <div class="head_foot">
+            <input class="no_yes size_no" type="button" value="否">
+            <input class="no_yes size_yes" type="button" value="是">
+        </div>
+    </div>
+    <div class="windows_font col-lg-6 col-md-6  col-sm-6 col-xl-4 none">
+        <div class="row" id="add_info">
+            <div class="col-lg-12 col-md-12">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        填写文字样式
+                    </div>
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-lg-6 col-md-6 col-sm-6">
+                                <!--name-->
+                                <div class="form-group">
+                                    <label>文本内容</label>
+                                    <textarea class="form-control" rows="3" id="textarea" type="text"></textarea>
+                                </div>
+                                <!--type-->
+                                <div class="form-group">
+                                    <label>字体</label>
+                                    <select class="form-control" id="select">
+                                        <option>Microsoft YaHei</option>
+                                        <option>SimSun</option>
+                                        <option>DFKai-SB</option>
+                                        <option>NSimSun</option>
+                                        <option>LiSu</option>
+                                    </select>
+                                </div>
+                                <!--data-->
+                                <div class="form-group">
+                                    <div class="col-lg-6 col-md-6 col-sm-6" style="float: left">
+                                        <label>x坐标</label>
+                                        <input type="text" class="form-control" placeholder="" id="x">
+                                    </div>
+                                    <div class="col-lg-6 col-md-6 col-sm-6" style="float: right">
+                                        <label>y坐标</label>
+                                        <input type="text" class="form-control">
+                                    </div>
+                                    <div class="clearfix"></div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-lg-12 col-md-12">
+                                        <label>每行最大行宽</label>
+                                        <input type="text" class="form-control" placeholder="500">
+                                    </div>
+                                    <div class="clearfix"></div>
+                                </div>
+                                <!--life-->
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-6">
+                                <div class="form-group">
+                                    <div class="col-lg-6 col-md-6 col-sm-6" style="float: left">
+                                        <label>边框大小</label>
+                                        <input type="text" class="form-control" placeholder="0">
+                                    </div>
+                                    <div class="col-lg-6 col-md-6 col-sm-6" style="float: right">
+                                        <label>边框颜色</label>
+                                        <input type="text" class="form-control" placeholder="#ffffff">
+                                    </div>
+                                    <div class="clearfix"></div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-lg-6 col-md-6 col-sm-6" style="float: left">
+                                        <label>字体大小</label>
+                                        <input type="text" class="form-control" placeholder="30">
+                                    </div>
+                                    <div class="col-lg-6 col-md-6 col-sm-6"style="float: right">
+                                        <label>字体颜色</label>
+                                        <input type="text" class="form-control" placeholder="#000000">
+                                    </div>
+                                    <div class="clearfix"></div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-lg-6 col-md-6 col-sm-6" style="float: left">
+                                        <label>旋转角度</label>
+                                        <input type="text" class="form-control" placeholder="0">
+                                    </div>
+                                    <div class="col-lg-6 col-md-6 col-sm-6" style="float: right">
+                                        <label>字体弧度</label>
+                                        <input type="text" class="form-control" placeholder="0">
+                                    </div>
+                                    <div class="clearfix"></div>
+                                </div>
+                                <div class="form-group">
+                                    <button type="button" class="btn btn-default" id="font_re" style="padding: 6px 12px;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.42857143;">撤销</button>
+                                    <button type="button" class="btn btn-default" id="font_do" style="    padding: 6px 12px;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.42857143;">绘制</button>
+                                </div>
+                                <div class="form-group">
+                                    <button type="button" class="btn btn-default" id="font_no" style="padding: 6px 12px;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.42857143;">退出</button>
+                                    <button type="button" class="btn btn-default" id="font_yes" style="    padding: 6px 12px;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.42857143;">保存</button>
+                                </div>
+                                <!--  <div class="col-lg-4 col-md-4">
+                                      <label>最大行宽</label>
+                                      <input class="form-control">
+                                  </div>-->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="windows_form none">
+        <div class="row">
+            <div class="col-lg-12 col-md-12">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                     起始角要等于下一项终止角
+                    </div>
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-lg-12 col-md-12 col-sm-12" id="target_form">
+                                <div class="form-group">
+                                    <div class="col-lg-3 col-md-3 col-sm-3" style="float: left">
+                                        <label>起始角</label>
+                                        <input type="text" class="form-control" placeholder="0">
+                                    </div>
+                                    <div class="col-lg-3 col-md-3 col-sm-3" style="float: left">
+                                        <label>终止角</label>
+                                        <input type="text" class="form-control" placeholder="0">
+                                    </div>
+                                    <div class="col-lg-6 col-md-6 col-sm-6" style="float: left">
+                                        <label>颜色(#)</label>
+                                        <input type="text" class="form-control">
+                                    </div>
+                                    <div class="clearfix"></div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <button type="button" class="btn btn-default" id="form_no" style="padding: 3px 6px;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.42857143;
+margin-left: 30px">退出</button>
+                                <button type="button" class="btn btn-default" id="form_yes" style="    padding: 3px 6px;margin-left: 35px;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.42857143;">添加</button>
+                                <button type="button" class="btn btn-default" id="form_do" style="padding: 3px 6px;margin-left: 35px;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.42857143;">绘制</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <article class="mainfeature none">
+        <a class="menu-toggle rounded" href="#"></a>
+        <div class="sliderset">
+            <p class="collor">亮度：</p>
+            <div class="slider red">
+            </div>
+            <p class="collor">对比度：</p>
+            <div class="slider blue"></div>
+            <p class="collor">模糊：</p>
+            <div class="slider green"></div>
+            <p class="collor">饱和度：</p>
+            <div class="slider black"></div>
+            <p class="collor">透明度：</p>
+            <div class="slider white"></div>
+        </div>
+    </article>
+</div>
+<canvas id="bg_canvas"></canvas>
+<img src="img/jojo/00.gif" class="none" id="img">
+</body>
+
+<script src="js/jquery-1.4.2.min.js"></script>
+<script src="vendor/jquery/jquery.min.js"></script>
+<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="js/draw.js"></script>
+<script src="js/main.js"></script>
+<script src="js/move.js"></script>
+<script src="js/function.js"></script>
+<script src="js/menu.js"></script>
+<script src="js/tools.js"></script>
+<script src="vendor/colorChoose/colpick.js"></script>
+<script src="js/jcanvas.js"></script>
+<script src="js/Ypaint.js"></script>
+<script src="js/ycanvas.js"></script>
+<script src="js/getcanvaspixelcolor.js"></script>
+<script src="js/jquery-ui.min.js"></script>
+<script src="js/index.js"></script>
+<script src="vendor/RulersGuides/jquery.PageRuler.1.1.js"></script>
+</html>

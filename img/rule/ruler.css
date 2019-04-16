@@ -1,0 +1,26 @@
+@charset "utf-8";
+/* zxxScaleBox */
+.zxxScaleBox{position:absolute;left:0;top:0;_position:absolute;z-index:0;overflow:hidden;}
+.zxxScaleRuler_h,.zxxScaleRuler_v,.zxxRefLine_v,.zxxRefLine_h,.zxxRefDot_h,.zxxRefDot_v{position:absolute;left:0;top:0;overflow:hidden;z-index:0;}
+.zxxScaleRuler_h{width:100%;height:18px;background:url(../rule/ruler_h.png) repeat-x;}
+.zxxScaleRuler_v{width:18px;height:100%;background:url(../rule/ruler_v.png) repeat-y;}
+.zxxScaleRuler_v .n,.zxxScaleRuler_h .n{position:absolute;font:10px/1 Arial, sans-serif;color:#333;cursor:default;}
+.zxxScaleRuler_v .n{width:8px;left:3px;word-wrap:break-word;}
+.zxxScaleRuler_h .n{top:1px;}
+.zxxRefLine_v,.zxxRefLine_h,.zxxRefDot_h,.zxxRefDot_v{z-index:998;}
+.zxxRefLine_h{width:100%;height:1px;background:#4affff;cursor:url(../rule/line_close.png), move;}
+.zxxRefLine_v{width:3px;height:100%;_height:9999px;background:url(../rule/line_v.gif) repeat-y center top;cursor:url(../rule/cur_move_v.cur), move;}
+.zxxRefDot_h{width:100%;height:3px;background:url(../rule/line_dot.png) repeat-x left 1px;cursor:url(../rule/cur_move_h.cur), move;top:-10px;}
+.zxxRefDot_v{width:3px;height:100%;_height:9999px;background:url(../rule/line_dot.png) repeat-y 1px top;cursor:url(../rule/cur_move_v.cur), move;left:-10px;}
+.zxxRefCrtBg{width:228px;height:146px;background:url(../rule/line_create_bg.png) no-repeat;position:absolute;z-index:1000;}
+.zxxRefCrtTit{height:30px;}
+.zxxRefCrtClose{width:21px;height:21px;margin:5px 5px 0 0;background:url(../rule/line_close.png) no-repeat;float:right;}
+.zxxRefCrtClose:hover{background-position:0 -21px;}
+.zxxRefCrtX{padding:18px 15px 0 20px;font-size:12px;overflow:hidden;_zoom:1;}
+.zxxRefCrtLeft{width:100px;padding-top:10px;float:left;}
+.zxxRefCrtRight{float:right;}
+.zxxRefCrtDir{height:18px;font-family:simsun;overflow:hidden;}
+.zxxRefCrtRadio{vertical-align:-2px;}
+.zxxRefCrtPlace{padding-top:16px;font-family:arial;}
+.zxxRefCrtInput{width:32px;height:14px;margin-right:4px;font-size:12px; padding:1px;vertical-align:middle;}
+.zxxRefCrtBtn{display:block;width:80px;height:20px;margin-bottom:8px;font-size:12px;}

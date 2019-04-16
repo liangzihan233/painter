@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Painter</title>
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- 定制图标 -->
+    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+    <!-- 本地css -->
+    <link href="css/painter.css" rel="stylesheet">
+</head>
+
+<body id="page-top">
+
+   <!--全页面遮罩层-->
+<div class="cover"></div>
+<a class="menu-toggle rounded" href="#">
+    <i class="fas fa-bars"></i>
+</a>
+   <!--侧边栏-->
+<nav id="sidebar-wrapper">
+    <ul class="sidebar-nav">
+        <li class="sidebar-brand">
+            <a class="js-scroll-trigger" href="main.html">开始</a>
+        </li>
+        <li class="sidebar-nav-item">
+            <a class="js-scroll-trigger" href="#" id="login_in">登录</a>
+        </li>
+        <li class="sidebar-nav-item">
+            <a class="js-scroll-trigger" href="#" id="sign_in">注册</a>
+        </li>
+        <li class="sidebar-nav-item">
+            <a class="js-scroll-trigger" href="#">帮助</a>
+        </li>
+        <li class="sidebar-nav-item">
+            <a class="js-scroll-trigger" href="#">查看</a>
+        </li>
+        <li class="sidebar-nav-item">
+            <a class="js-scroll-trigger" href="#">源代码</a>
+        </li>
+    </ul>
+</nav>
+   <!--登录注册窗口-->
+<div class="window">
+    <div class="head">
+        <h1>
+            <span>登录</span>
+            <span>注册</span>
+        </h1>
+        <button id="button" style="border: 0"></button>
+    </div>
+    <div class="w_content">
+        <input type="text" class="w_input" placeholder="请输入登录手机号/邮箱" style="margin-bottom: 10px;">
+        <div style="width: 100%;height: 34px"><p class="none"  style="color: red;font-size: 10px">请输入正确的邮箱或手机号</p></div>
+        <input type="text" class="w_input" placeholder="请输入密码" style="margin-bottom: 10px">
+        <div style="width: 100%;height: 34px">
+            <p class="none readed" style="color: red;font-size: 10px">请认真阅读《Painter注册协议》</p>
+            <p class="none" style="color: red;font-size: 10px">请输入6-15位密码,不能用空格</p>
+        </div>
+        <div class="w_checkbox">
+            <div>
+            <input id="checked" type="checkbox" style="vertical-align: middle">
+            <a style="margin-left: 15px">七天内自动登录</a>
+                <a id="w_a" class="none">《Painter注册协议》</a>
+            </div>
+            <div class="a_read">
+            <a>找回密码</a>
+            <div class="dot"></div>
+            <a>无法登录</a>
+            </div>
+        </div>
+        <div class="foot">
+            <input type="button" value="登录">
+        </div>
+    </div>
+</div>
+
+<!-- Header 主页面布局-->
+<header class="masthead d-flex">
+    <div class="container text-center my-auto">
+        <h1 class="mb-1">Start Your Painter</h1>
+        <h3 class="mb-5">
+            <em>一个免费开源的绘图网站</em>
+        </h3>
+        <a class="btn btn-primary btn-xl js-scroll-trigger" href="main.html">那就开始吧</a>
+    </div>
+    <div class="overlay"></div>
+</header>
+<script src="vendor/jquery/jquery.min.js"></script>
+   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script>
+    /*侧边栏出现消失*/
+    (function($) {
+        "use strict";
+        $(".menu-toggle").click(function(e) {
+            e.preventDefault();
+            $("#sidebar-wrapper").toggleClass("active");
+            $(".menu-toggle > .fa-bars, .menu-toggle > .fa-times").toggleClass("fa-bars fa-times");
+            $(this).toggleClass("active");
+        });
+    })(jQuery);
+     /*弹窗和遮罩层*/
+    $("#login_in").click(function () {
+        $(".cover").css("display","block");
+        $(".head span:first").addClass("span_active");
+        document.getElementsByClassName("window")[0].style.display = "block";
+    });
+    $("#sign_in").click(function () {
+        $(".cover").css("display","block");
+        $(".head span:last").addClass("span_active");
+        document.getElementsByClassName("window")[0].style.display = "block";
+    })
+    $("#button").click(function () {
+        document.getElementsByClassName("cover")[0].style.display = "none";
+        document.getElementsByClassName("window")[0].style.display = "none";
+    });
+    /*登录，注册切换*/
+    var click_now = true;
+    /*登录*/
+    $(".head span:first").click(function () {
+        if(!click_now){
+            $(".head span").removeClass("span_active");
+            $(".head span:first").addClass("span_active");
+            $(".w_content input:first").attr('placeholder',"请输入登录手机号/邮箱");
+            $(".w_content a:first").text("七天内自动登录");
+            $("#w_a").addClass("none");
+            $(".a_read").removeClass("none");
+            $(".w_content p").addClass("none");
+            $(".w_content input").val("");
+            $(".foot input").val("登录");
+            $("#checked").prop("checked", false);
+            click_now = true;
+        }
+    });
+    /*注册*/
+    $(".head span:last").click(function () {
+        if(click_now){
+            $(".head span").removeClass("span_active");
+            $(".head span:last").addClass("span_active");
+            $(".w_content input:first").attr('placeholder',"请输入注册手机号/邮箱");
+            $(".w_content a:first").text("我以认真阅读");
+            $("#w_a").removeClass("none");
+            $(".a_read").addClass("none");
+            $(".w_content p").addClass("none");
+            $(".w_content input").val("");
+            $(".foot input").val("注册");
+            $("#checked").prop("checked", false);
+            click_now = false;
+        }
+    });
+    /*正则检测账号密码*/
+    $(".w_input:last").click(function () {
+        var value = $(".w_input:first").val();
+        if(value === ""){return 0}
+        else if (isPoneAvailable(value)){
+            $(".w_content p:first").addClass("none");
+        }
+        else{
+            $(".w_content p:first").removeClass("none");
+        }
+    });
+    /*正则检测密码*/
+    $(".w_input:first").click(function () {
+        var value = $(".w_input:last").val();
+        if(value === ""){return 0}
+        else if(isPasswd(value)){
+            $(".w_content p:last").addClass("none");
+        }
+        else{
+            $(".readed").addClass("none");
+            $(".w_content p:last").removeClass("none");
+        }
+    });
+    /*登录注册按钮*/
+    $(".foot input").click(function (a) {
+        var value_1 = $(".w_input:first").val();
+        var value_2 = $(".w_input:last").val();
+        $(".readed").addClass("none");
+       console.log(1);
+
+        if(value_1 === ""){$(".w_content p:first").removeClass("none")}
+        else if (isPoneAvailable(value_1)){return 0}
+        else{
+            $(".w_content p:first").removeClass("none");
+        }
+
+
+
+
+        if(value_2 === ""){$(".w_content p:last").removeClass("none")}
+        else if(isPasswd(value_2)){return 0}
+        else{
+            $(".w_content p:last").removeClass("none");
+        }
+    });
+    /*登录按钮2*/
+    $(".foot input").click(function (b) {
+        if(!click_now){
+            /*注册时*/
+            if($("#checked").is(':checked')){/*按了*/
+                $(".readed").addClass("none");
+            } else {
+                $(".w_content p:last").addClass("none");
+                $(".readed").removeClass("none");
+            }
+        }
+    });
+    /*取消按钮*/
+    $("#button").click(function () {
+       $(".w_content p").addClass("none");
+       $(".head span:first").trigger("click");
+       $("#checked").prop("checked", false);
+       $(".w_content input").val("");
+        $(".w_content input").val("登录");
+    });
+    /*账号判断正则*/
+    function isPoneAvailable(str) {
+        var myreg=/^[1][3,4,5,7,8][0-9]{9}$/;
+        if (!myreg.test(str)) {
+            return false;
+        } else {
+            return true;
+        }
+    }
+    /*密码长度判断正则*/
+    function isPasswd(s) {
+         var patrn=/^(\w){6,15}$/;
+         if (!patrn.exec(s)) {return false}
+        else{ return true}
+         }
+
+</script>
+</body>
+</html>
+
+
